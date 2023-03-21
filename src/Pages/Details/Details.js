@@ -1,11 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 const Details = () => {
   const { id } = useParams();
   const [roomDetails, setRoomDetails] = useState({});
   const [form, setForm] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/room/${id}`)
+    fetch(
+      `https://hotel-management-server-production.up.railway.app/room/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setRoomDetails(data));
   }, []);
@@ -25,11 +27,14 @@ const Details = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/room/add", {
-      method: "post",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(form),
-    })
+    fetch(
+      "https://hotel-management-server-production.up.railway.app/room/add",
+      {
+        method: "post",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(form),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {

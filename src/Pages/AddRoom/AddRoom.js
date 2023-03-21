@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "./../Navbar/Navbar";
 
 const AddRoom = () => {
   const [form, setForm] = useState({});
@@ -35,11 +36,14 @@ const AddRoom = () => {
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
     } else {
-      fetch("http://localhost:5000/addRoom", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(form),
-      })
+      fetch(
+        "https://hotel-management-server-production.up.railway.app/addRoom",
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      )
         .then((res) => res.json())
         .then((result) => console.log(result));
       alert("room Added");
@@ -53,6 +57,7 @@ const AddRoom = () => {
   };
   return (
     <div className="container">
+      <Navbar />
       <form>
         <div className="mb-3">
           <label htmlFor="exampleInputName" className="form-label">
@@ -137,7 +142,8 @@ const AddRoom = () => {
         <button
           onClick={handleSubmit}
           type="submit"
-          className="btn btn-primary"
+          style={{ backgroundColor: "#0a3454" }}
+          className="btn btn-primary border-0"
         >
           Submit
         </button>

@@ -4,18 +4,24 @@ import SingleHotel from "./SingleHotel";
 const Hotel = () => {
   const [rooms, setRooms] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/rooms")
+    fetch("https://hotel-management-server-production.up.railway.app/rooms")
       .then((res) => res.json())
       .then((data) => setRooms(data));
   }, []);
   console.log(rooms);
   return (
     <div className="mt-4">
-      <div className="row">
-        {rooms.map((room) => (
-          <SingleHotel room={room} key={room._id} />
-        ))}
-      </div>
+      {rooms.length === 0 ? (
+        <div className="spinner-border text-center" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      ) : (
+        <div className="row">
+          {rooms.map((room) => (
+            <SingleHotel room={room} key={room._id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

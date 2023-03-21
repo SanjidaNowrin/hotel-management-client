@@ -11,7 +11,10 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.22.0",
+    "axios": "^0.24.0"
   },
   "scripts": {
     "start": "react-scripts start",

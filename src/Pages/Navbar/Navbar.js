@@ -29,7 +29,7 @@ const Navbar = () => {
             aria-current="page"
             href="#"
           >
-            Add Room
+            <h5 className="title">Add Room</h5>
           </Link>
           <Link
             to="/all_booking"
@@ -37,7 +37,7 @@ const Navbar = () => {
             aria-current="page"
             href="#"
           >
-            Add Booking
+            <h5 className="title"> All Booking</h5>
           </Link>
         </ul>
       </div>

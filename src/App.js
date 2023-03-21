@@ -5,6 +5,7 @@ import AddRoom from "./Pages/AddRoom/AddRoom";
 import "./App.css";
 import Details from "./Pages/Details/Details";
 import AllBooking from "./Pages/AllBooking/AllBooking";
+import Payment from "./Pages/PaymentMethod/Payment";
 function App() {
   const routes = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ function App() {
     {
       path: "/all_booking",
       element: <AllBooking />,
+    },
+    {
+      path: "/payment/:id",
+      element: <Payment />,
     },
   ]);
   return (
