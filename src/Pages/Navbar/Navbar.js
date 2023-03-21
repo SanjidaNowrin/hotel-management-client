@@ -24,6 +24,14 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <Link
+            to="/rooms"
+            className="nav-link active"
+            aria-current="page"
+            href="#"
+          >
+            <h5 className="title">Rooms</h5>
+          </Link>
+          <Link
             to="/addRoom"
             className="nav-link active"
             aria-current="page"

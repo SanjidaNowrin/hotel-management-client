@@ -46,7 +46,7 @@ const Details = () => {
   };
   return (
     <div className="card mt-4 mb-3 border-0 container">
-      <div className="row g-5 ">
+      <div className="row g-5 m-0">
         <div className="col-md-4 text-center ">
           <img
             src={image}

@@ -13,6 +13,10 @@ function App() {
       element: <Home />,
     },
     {
+      path: "/rooms",
+      element: <Home />,
+    },
+    {
       path: "/addRoom",
       element: <AddRoom />,
     },

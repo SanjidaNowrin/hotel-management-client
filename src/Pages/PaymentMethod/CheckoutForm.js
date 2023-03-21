@@ -74,7 +74,7 @@ const CheckoutForm = ({ payment }) => {
           <h4 className="text-center mt-5">
             Congratulations!
             <span className="ms-1 me-2 payment-user">{payment.user_name}</span>
-            payment successfully
+            payment successfully done
           </h4>
         </div>
       )}
